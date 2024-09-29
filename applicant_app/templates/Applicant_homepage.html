@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Homepage</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content with Sidebar and Main Area -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <!-- Search Bar -->
+        <input type="text" placeholder="Search Position Here">
+        <!-- Search button is now non-functional -->
+        <button onclick="return false;">Search</button>
+
+        <!-- Job Cards -->
+        <div>
+            <h2>Doctor</h2>
+            <p>A doctor is a medical professional who diagnoses and treats illnesses and injuries in patients. They conduct physical examinations, order and interpret diagnostic tests, and develop treatment plans. Doctors also provide preventive care, educate patients about health and wellness, and may work in various settings including hospitals, clinics, and private practices.</p>
+            <p><b>Date Created:</b> 01/01/2024</p>
+            <button onclick="window.location.href='{% url 'jobreq' 'doctor' %}'">View Details</button>
+        </div>
+
+        <div>
+            <h2>Teacher</h2>
+            <p>A teacher is an educational professional who imparts knowledge and skills to students at various levels. Teachers create a supportive learning environment, develop and implement lesson plans, and assess student progress to foster academic and personal growth.</p>
+            <p><b>Date Created:</b> 01/02/2024</p>
+            <button onclick="window.location.href='{% url 'jobreq' 'teacher' %}'">View Details</button>
+        </div>
+
+        <div>
+            <h2>Helper</h2>
+            <p>A helper provides support and assistance in various tasks, often in non-medical settings. The role can vary widely depending on the specific job or industry, but generally involves assisting others with their daily tasks and contributing to the smooth operation of activities.</p>
+            <p><b>Date Created:</b> 01/03/2024</p>
+            <button onclick="window.location.href='{% url 'jobreq' 'helper' %}'">View Details</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

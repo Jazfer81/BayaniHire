@@ -1,0 +1,43 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Mode Page</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <p>You are in View Mode. Please select a file to View/Download.</p>
+        <div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div>
+            <button>VIEW</button>
+            <button>DOWNLOAD</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<p>© BayaniHire Inc</p>
+
+</body>
+</html>

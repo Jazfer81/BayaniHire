@@ -1,0 +1,62 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Details</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <h2>Interview Details</h2>
+
+        <div>
+            <div>
+                <div>Name of Interviewer</div>
+                <div>Katrina Reyes</div>
+                <div>Schedule Date</div>
+                <div>April 14, 2024</div>
+            </div>
+            <div>
+                <div>Interviewer Message:</div>
+                <div>
+                    Congratulations! You are now in the interview process. Please go to 405 Oak Avenue, Suite 201, Third floor, room 3, Downtown, with a specific schedule date. Good luck!
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Map -->
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.6732267415777!2d-122.42083778467997!3d37.77492977975981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064d7bcde5f%3A0x7d61f6b0e167220d!2s405%20Oak%20Ave%2C%20San%20Francisco%2C%20CA%2094124%2C%20USA!5e0!3m2!1sen!2sus!4v1686263673512!5m2!1sen!2sus"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Buttons -->
+        <div>
+            <button>Download</button>
+            <button>Print</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<p>© BayaniHire Inc</p>
+
+</body>
+</html>

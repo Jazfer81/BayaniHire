@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status Page</title> 
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <!-- Table Section -->
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Position Applied</th>
+                    <th>Date Created</th>
+                    <th>Application Status</th>
+                    <th>Date Applied</th>
+                    <th>Interview Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1: Doctor -->
+                <tr>
+                    <td>Doctor</td>
+                    <td>01/01/2024</td>
+                    <td>Pending</td>
+                    <td>01/01/2024</td>
+                    <td>01/15/2024</td>
+                </tr>
+                
+                <!-- Row 2: Helper -->
+                <tr>
+                    <td>Helper</td>
+                    <td>01/02/2024</td>
+                    <td>Reviewed</td>
+                    <td>01/02/2024</td>
+                    <td>01/16/2024</td>
+                </tr>
+                
+                <!-- Empty Rows -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Buttons Section -->
+        <div>
+            <button onclick="window.location.href='{% url 'viewfileupload' %}';">View Files Uploaded</button>
+            <button onclick="window.location.href='{% url 'jobreq' 'doctor' %}';">View Job Description</button>
+            <button onclick="window.location.href='{% url 'interviewdetails' %}';">View Interview Details</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<p>© BayaniHire Inc</p>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Requirement</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Job Details -->
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Job Title</th>
+            <td>{{ job_details.title }}</td>
+        </tr>
+        <tr>
+            <th>Date Published</th>
+            <td>{{ job_details.date_published }}</td>
+        </tr>
+        <tr>
+            <th>Job Description</th>
+            <td>{{ job_details.description }}</td>
+        </tr>
+        <tr>
+            <th>Job Requirements</th>
+            <td>{{ job_details.requirements }}</td>
+        </tr>
+        <tr>
+            <th>Job Benefits</th>
+            <td>{{ job_details.benefits }}</td>
+        </tr>
+    </table>
+
+    <!-- Job Status and Apply Button -->
+    <p>Status: ACTIVE</p>
+    <button onclick="window.location.href='{% url 'fileupload' %}';">Apply</button>
+</div>
+
+</body>
+</html>

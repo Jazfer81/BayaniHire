@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BayaniHire: Admin Center</title>
+</head>
+<body>
+    <label style="font-family: Georgia; font-size: 30px; font-weight: bold;">BayaniHire: Admin Center</label>
+    <br><br>
+    <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+    <br><br>
+
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'adminprofile' %}';">Profile</button>
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'list_of_applicants' %}';">List of Applicants</button>
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'list_of_jobs' %}';">List of Jobs</button>
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'qualification' %}';">Qualification</button>
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'schedule' %}';">Schedule</button>
+    <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'feedback' %}';">Feedback</button>
+    <br><br><br>
+    <label style="font-family: Georgia; font-size: 36px; font-weight: bold;">Admin User Account Setup</label>
+    <br><br>
+    <label style="font-family: Georgia; font-size: 14px; font-weight: bold;">
+        Welcome to Admin User Account Setup, where the System Admin can add more Admins and Interviewers to the system!
+    </label>
+    <br><br>
+    
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">Role:</label>
+    <select style="font-family: Georgia; font-size: 18px; font-weight: bold;">
+        <option>Interviewer</option>
+        <option>Admin</option>
+    </select>
+    <br><br>
+
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">Birthday:</label>
+    <input type="date" min="1900-01-01" max="2024-09-21">
+    <br><br>
+
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">Gender:</label>
+    <select style="font-family: Georgia; font-size: 18px; font-weight: bold;">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Prefer not to say</option>
+    </select>
+    <br><br>
+
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">First Name:</label>
+    <input type="text" placeholder="First Name">
+    <br><br>
+
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">Middle Name:</label>
+    <input type="text" placeholder="Middle Name">
+    <br><br>
+
+    <label style="font-family: Georgia; font-size: 20px; font-weight: bold;">Last Name:</label>
+    <input type="text" placeholder="Last Name">
+    <br><br>
+
+    <button style="font-family: Georgia; font-size: 20px; font-weight: bold;">Create</button>
+    <br><br>
+</body>
+</html>

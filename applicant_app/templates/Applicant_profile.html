@@ -1,0 +1,77 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Profile</title>
+</head>
+<body>
+
+<!-- Header Section -->
+<h1>BayaniHire Applicant Center</h1>
+<button onclick="window.location.href='{% url 'profile' %}';">Profile</button>
+
+<!-- Main Content -->
+<div>
+    <!-- Sidebar -->
+    <div>
+        <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+        <p><button onclick="window.location.href='{% url 'homepage' %}'">Home</button></p>
+        <p><button onclick="window.location.href='{% url 'applicationstatus' %}'">Application Status</button></p>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <div id="ApplicantProfile">User Profile</div>
+        
+        <div id="Appliprofileusername">
+            <b>Username:</b> <span>Insert Username Here</span>
+        </div>
+        <div id="Appliprofilename">
+            <b>Name:</b> <span>Insert Name Here</span>
+        </div>
+        <div id="Appliprofileemail">
+            <b>Email:</b> <span>Insert Email Here</span>
+        </div>
+        
+        <div id="AppliPassword">Password</div>
+        <div>
+            <div><b>Password:</b> <i>*HIDDEN*</i></div>
+            <button onclick="togglePasswordSection()">Edit Password</button>
+        </div>
+
+        <div id="changePasswordSection" style="display: none;">
+            <div>
+                <b>Password:</b> <input type="password" placeholder="Current Password">
+            </div>
+            <div>
+                <b>New Password:</b> <input type="password" placeholder="New Password">
+            </div>
+            <div>
+                <b>Confirm Password:</b> <input type="password" placeholder="Confirm Password">
+            </div>
+            <div>
+                <button>Save</button>
+            </div>
+        </div>
+
+        <!-- Sign Out Button -->
+        <button style="font-family: Georgia; font-size: 14px; font-weight: bold;" onclick="window.location.href='{% url 'login' %}';">Sign Out</button>
+
+    </div>
+</div>
+
+<script>
+    function togglePasswordSection() {
+        var section = document.getElementById('changePasswordSection');
+        if (section.style.display === 'none' || section.style.display === '') {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
