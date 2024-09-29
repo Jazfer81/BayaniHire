@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BayaniHire - Register</title>
+	<style>
+		.name-container, .address-container, .info-container, .password-container, .username-email-gender-container {
+			display: flex;
+			gap: 10px;
+		}
+	</style>
+	
+</head>
+<body>
+	<nav class="navbar">
+		<div class="navdiv">
+			<button class="signin-btn"><a href="{% url "login" %}">Log In</a></button>
+		</div>
+	</nav>
+
+	<header class="header">
+		<img src="{% static 'Logo.png' %}" alt="logo image" width="150" height="128">
+	</header>
+
+	<div class="content-area">
+		<h2>Create Account</h2>
+		<form class="register-form" action="process_registration.php" method="POST">
+            <!-- Name label and inputs -->
+            <div>
+                <label for="first-name">Name:</label>
+                <div class="name-container">
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    <input type="text" id="middle-name" name="middle-name" placeholder="Middle Name">
+                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                </div>
+            </div>
+
+			<!-- Address label and inputs -->
+            <div>
+			    <label for="street">Current Address:</label>
+                <div class="address-container">
+			        <input type="text" id="street" name="street" placeholder="Street" required>
+			        <input type="text" id="city" name="city" placeholder="City" required>
+			        <input type="text" id="state" name="state" placeholder="State" required>
+			        <input type="text" id="zipcode" name="zipcode" placeholder="Zip Code" required>
+                </div>
+            </div>
+
+			<!-- Email, Mobile, Birthday -->
+            <div>
+                <div class="info-container">
+                    <div>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                    <div>
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday" required>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="username-email-gender-container">
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                        
+                    </div>
+                    <div>
+                        <label for="email-domain" class="hidden-label"> </label>
+                        <input type="text" class="email-domain" id="email-domain" value="@bayanihire.com" readonly>            
+                    </div>
+                    <div>
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" class="password-input" placeholder="+6 Characters" required>
+                    <input type="password" id="confirm-password" name="confirm-password" class="password-input" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            
+
+			<div class="button-container">
+				<button type="submit">Register</button>
+			</div>
+
+            <div class="terms-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <span>I agree to the <a href="#" id="terms-link">Terms and Conditions</a></span>
+            </div>
+
+		</form>
+	</div>
+
+	<!-- Terms and Conditions Modal -->
+	<div id="terms-modal" class="modal">
+		<div class="modal-content">
+			<img src="{% static 'terms.png' %}" alt="logo image" width="128" height="128">
+			<div class="modal-text">
+				<h2>Terms and Conditions</h2>
+				<p>
+					By accessing BayaniHire, you agree to be bound by the following terms and conditions. Please read these terms carefully before using the System. If you do not agree to these terms, you may not use the System.
+				</p>
+				<p class="bold-text">1. Personal Information:</p>
+				<p>
+					a. In the process of using this System, you may be required to provide personal information such as your name, contact details, educational background, work experience, and other relevant details.
+				</p>
+				<p>
+					b. You agree that all Personal Information provided by you is accurate, complete, and up-to-date. c. You acknowledge and agree that all Personal Information provided by you will be used solely for the purpose of the hiring process facilitated by this System.
+				</p>
+				<p class="bold-text">2. Confidentiality:</p>
+				<p>
+					a. We are committed to maintaining the confidentiality of your Personal Information.
+				</p>
+				<p>
+					b. Your Personal Information will not be shared with any third parties without your consent, except as required by law or as necessary for the hiring process.
+				</p>
+				<p class="bold-text">3. Security:</p>
+				<p>
+					a. We employ reasonable security measures to protect your Personal Information from unauthorized access, disclosure, alteration, or destruction.
+				</p>
+				<p>
+					b. However, you acknowledge that no method of transmission over the internet or electronic storage is 100% secure and we cannot guarantee absolute security of your Personal Information.
+				</p>
+				<p class="bold-text">4. Retention of Personal Information:</p>
+				<p>
+					a. We will retain your Personal Information only for as long as necessary for the purposes outlined in these Terms and in compliance with applicable laws and regulations.
+				</p>
+				<p> 
+					b. You may request the deletion or modification of your Personal Information by contacting us through the provided channels.
+				</p>
+				<p class="bold-text">5. Consent</p>
+				<p>
+					a. By using this System and providing your Personal Information, you consent to the collection, use, and disclosure of your Personal Information as described in these Terms.
+				</p>
+				<p>
+					b. You also consent to receiving communications from us regarding the hiring process, including but not limited to emails, notifications, and updates.
+				</p>
+				<p class="bold-text">6. Changes to Terms:</p>
+				<p>
+					a. We reserve the right to modify these Terms at any time without prior notice.
+				</p>
+				<p>
+					b. Your continued use of the System after any such changes indicates your acceptance of the modified Terms
+				</p>
+				<p class="bold-text">7. Governing Law:</p>
+				<p>
+					a. These Terms shall be governed by and construed in accordance with the laws of Republic of the Philippines, without regard to its conflict of law provisions.
+				</p>
+				<p>
+					b. Any dispute arising out of or relating to these Terms or the use of the System shall be exclusively resolved by the courts of the Republic of the Philippines.
+				</p>
+				<p class="bold-text">8. Contact Information:</p>
+				<p>If you have any questions or concerns about these Terms or the System, please contact us at +63-9471-798-884 or email us at bayanihire_cavite@gmail.com.</p>
+				<p>By using this System, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+
+				<!-- Checkbox inside Modal -->
+				<div class="modal-checkbox-container">
+					<input type="checkbox" id="modal-terms" name="modal-terms" required>
+					<label for="modal-terms">I have read and agree to the Terms and Conditions</label>
+				</div>
+			</div>
+		</div>
+		<!-- Close Button -->
+		<button class="close-btn" id="close-modal">&times;</button>
+	</div>
+
+	<footer>
+		&copy; 2024 BayaniHire. All Rights Reserved.
+	</footer>
+
+</body>
+</html>

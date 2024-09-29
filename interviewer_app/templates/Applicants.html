@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BayaniHire: Interviewer Center</title>
+</head>
+<body>
+
+    <h1 style="font-family: Georgia; font-size: 30px; font-weight: bold;">BayaniHire: Interviewer Center</h1>
+
+    <img src="{% static 'Logo.png' %}" alt="BayaniHire Logo" width="500px" height="300px">
+<br>
+    <div>
+        <button style="font-family: Georgia; font-size: 14px;" onclick="window.location.href='{% url 'INTprofile' %}'">Profile</button>
+    <button style="font-family: Georgia; font-size: 14px;" onclick="window.location.href='{% url 'INTappointments' %}'">Appointments</button>
+    <button style="font-family: Georgia; font-size: 14px;" onclick="window.location.href='{% url 'INTapplicants' %}'">Applicants</button>
+    <button style="font-family: Georgia; font-size: 14px;" onclick="window.location.href='{% url 'INTfeedback' %}'">Interview Feedback</button>
+    <button style="font-family: Georgia; font-size: 14px;" onclick="window.location.href='{% url 'INThistory' %}'">Feedback History</button>
+    </div>
+
+    <table border="1" style="font-family: Georgia; font-size: 18px;">
+        <thead>
+            <tr>
+                <th>Applicant's Name</th>
+                <th>Job Applied</th>
+                <th>Date Applied</th>
+                <th>Interview Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button style="font-family: Georgia; font-size: 18px;"onclick="window.location.href='{% url 'INTviewinfo' %}'">View Info and Credentials</button>
+
+    <h2 style="font-family: Georgia; font-size: 40px;font-weight: bold;">Qualified Applicants</h2>
+</body>
+</html>
